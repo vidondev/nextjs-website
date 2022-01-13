@@ -1,15 +1,15 @@
+import Banner from '../components/banner'
+import withLayout from "../layouts"
 
-import Banner from '../components/banner';
-import withLayout from '../layouts/index';
-
-const Index = ({ banners }) => (
-  <div>
-    <Banner banners={banners} />
-    <div className='max-w-8xl mx-auto'>Home Page</div>
-  </div>
-);
-
-
+function MoviePage( { banners }) {
+    return (
+      <div>
+        <Banner banners={banners} />
+        <h3>Movie</h3>
+      </div>
+      
+    )
+}
 
 export async function getStaticProps(context) {
   return {
@@ -25,4 +25,5 @@ export async function getStaticProps(context) {
   }
 }
 
-export default withLayout()(Index);
+
+export default withLayout()(MoviePage)
