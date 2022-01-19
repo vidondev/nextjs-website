@@ -9,16 +9,16 @@ export default function Category( { title, categories,category }) {
     const router = useRouter()
     return <>
         <MainLayout title={title}>
-            <div className={`mt-16`}>
+            <div className={`mt-16`} style={{padding: '0 20px'}}>
                 <h2 className={`text-center`}>最新資訊</h2>
-                <div className={`bg-white rounded flex py-18px px-18px text-base mt-10 items-center`}>
-                    <div className={`mr-14`}>類別</div>
-                    <ul className={`category flex space-x-2`}>
+                <div className={`bg-white rounded flex py-18px px-18px text-base mt-10 items-center justify-start flex-col md:flex-row`}>
+                    <div className={`md:mr-14 mx-auto flex-none`}>類別</div>
+                    <ul className={`category flex-wrap flex space-x-2`}>
                         <li className={`item all`}>
                             <Link href={`/topics`}><a>全部</a></Link>
                         </li>
                         {categories?.map( ( category ) => {                            
-                            return <li key={category.id} className={`item ${category.type} ${router.query.category == category.type && 'active'}`}>
+                            return <li key={category.id} className={`item ${category.type} ${router.query.category == category.type ? 'active': ''}`}>
                                 <Link href={`/topics/${category.type}`} as={`/topics/${category.type}`}>
                                     <a>{category.name}</a>                                    
                                 </Link>
@@ -26,7 +26,7 @@ export default function Category( { title, categories,category }) {
                         })}                        
                     </ul>
                 </div>   
-                <div className='my-5 grid md:grid-cols-4 gap-3 grid-cols-2 md:mx-0 mx-4'>
+                <div className='my-5 grid md:grid-cols-4 gap-3 grid-cols-2'>
                     {category?.topics.map( (topic) => {
                         return <Card topic={topic} showHeader={true} key={topic.id}/>
                     })}                  

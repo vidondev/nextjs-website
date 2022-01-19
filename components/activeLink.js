@@ -11,7 +11,7 @@ const ActiveLink = ({ children, activeClassName, ...props }) => {
     const isCurrent = asPath === props.href || asPath === props.as  
     const { color } = props  
     const className = classNames(       
-        'text-sm block py-18px text-center hover:after:rounded-t-md hover:text-white',
+        'text-xs lg:text-sm block py-18px text-center hover:after:rounded-t-md hover:text-white',
         {[colors['text'][color]]: color && !isCurrent},
         {[colors['after-bg'][color]]:color},
         {[activeClassName]:isCurrent}

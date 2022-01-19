@@ -24,8 +24,9 @@ body {
 @layer components {
   .category {
     .item {
+      margin: 5px 0;
       a {
-        padding: 4px 24px;
+        padding: 4px 24px;        
         @apply block;
       }
       @apply transition rounded-full border-2;

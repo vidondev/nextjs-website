@@ -2,6 +2,7 @@ import MainLayout from '../layouts/MainLayout';
 import BannerCard from '../components/bannerCard';
 import Card from '../components/posts/card';
 import { PrismaClient } from "@prisma/client"
+import Link from 'next/link';
 const prisma = new PrismaClient()
 const Index = ({ banners, bannerCards, topics }) => (
   <MainLayout banners={banners}>    
@@ -17,6 +18,11 @@ const Index = ({ banners, bannerCards, topics }) => (
         return <Card topic={topic} showHeader={true} key={topic.id}/>
       })}                  
     </div>      
+    <div>
+      <Link href={`/topics`}>
+        <a>See more</a>
+      </Link>
+    </div>
   </MainLayout>
 );
 

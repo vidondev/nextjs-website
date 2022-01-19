@@ -2,6 +2,8 @@
     padding: {
         top: 2px;
         bottom: 2px;
+        left: 20px;
+        right: 20px;
     }    
     background: {
         color: white;
@@ -18,9 +20,9 @@
     .item {
         overflow: hidden;
         position: relative;
-        margin: 0 2px;
-        height: 56px;
+        margin: 0 2px;        
         & > a {
+            height: 56px;
             position: relative;
             z-index: 9999;
             font-weight: 600;
