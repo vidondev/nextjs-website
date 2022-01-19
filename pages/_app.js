@@ -1,5 +1,4 @@
-import '../styles/globals.css'
-import '../styles/header.css'
+import '../styles/globals.scss'
 import store from '../features/store'
 import { Provider } from 'react-redux'
 

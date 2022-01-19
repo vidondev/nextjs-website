@@ -1,0 +1,9 @@
+-- CreateTable
+CREATE TABLE "Banner" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "image" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL,
+    "categoryId" INTEGER,
+    CONSTRAINT "Banner_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "Category" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+);
