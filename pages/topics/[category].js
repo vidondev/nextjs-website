@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Card from "../../components/posts/card";
 
 const prisma = new PrismaClient()
-export default function TopicPage( { title, categories,category }) {
+export default function Category( { title, categories,category }) {
     const router = useRouter()
     return <>
         <MainLayout title={title}>

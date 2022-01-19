@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from '../styles/footer.module.scss'
 
 
-export default () => {
+export default function Footer() {
     return (
         <div className={`${styles.footer}`}>
             <div className={`${styles.top}`}>

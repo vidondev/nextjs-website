@@ -4,7 +4,7 @@ import ActiveLink from "./activeLink"
 import styles from '../styles/header.module.scss'
 
 
-export default () => {
+export default function Header() {
     const nav = [
         { name: '電視動畫系列', href: '/anime', color: 'blue'},
         { name: '電影', href: '/movie', color: 'orange'},

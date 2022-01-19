@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import { useRouter } from 'next/router'
 
-export default (props) => {  
+export default function Banner(props) {  
     const [currentIndex, setIndex] = useState(0);
     const { banners = [] } = props  
     const offset = -((currentIndex%banners.length)*100)+"%"    

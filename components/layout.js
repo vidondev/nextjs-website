@@ -1,7 +1,7 @@
 import Header from './header'
 import Banner from './banner'
 import Footer from './footer'
-export default ({children}) => {
+export default function Layout({children}) {
     return (
         <div className='flex flex-col h-screen'>
             <Header className='grow'/>
