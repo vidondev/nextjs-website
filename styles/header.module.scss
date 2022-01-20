@@ -1,103 +1,150 @@
 .header {
-    padding: {
-        top: 2px;
-        bottom: 2px;
-        left: 20px;
-        right: 20px;
-    }    
-    background: {
-        color: white;
+  padding: {
+    top: 2px;
+    bottom: 2px;
+    left: 20px;
+    right: 20px;
+  }
+  background: {
+    color: white;
+  }
+  .logo {
+    width: 170px;
+    margin: {
+      top: 6px;
+      bottom: 6px;
     }
-    .logo {
-        width: 170px;
-        margin: {
-            top: 6px;
-            bottom: 6px;
+    text-align: center;
+  }
+
+  .item {
+    overflow: hidden;
+    position: relative;
+    margin: 0 2px;
+    @apply w-3/6;
+    & > a {
+      height: 56px;
+      position: relative;
+      z-index: 9999;
+      font-weight: 600;
+      &:hover {
+        transition: 0.2s linear;
+      }
+      &.current::after {
+        bottom: 0;
+      }
+
+      &:hover::after {
+        bottom: 0;
+        z-index: -1;
+      }
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        bottom: -92%;
+        transition: 0.3s all ease;
+        left: 0;
+        z-index: -1;
+      }
+    }
+    &:last-child {
+      min-width: 150px;
+      & > a {
+        padding-left: 62px;
+        font-weight: normal;
+        &:hover {
+          color: #555;
+          opacity: 0.5;
         }
-        text-align: center;
+        &:before {
+          font-family: icomoon !important;
+          font-style: normal;
+          font-weight: 400;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          content: "\e901";
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background: #fecf00;
+          left: 15px;
+          font-size: 23px;
+          line-height: 33px;
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          display: block;
+          position: absolute;
+          color: #fff;
+          text-align: center;
+        }
+      }
+      &:before,
+      &:after {
+        content: "";
+        width: 1px;
+        height: 26px;
+        background: #d9d9d9;
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+      &:after {
+        right: 0;
+      }
     }
-    
-    .item {
-        overflow: hidden;
-        position: relative;
-        margin: 0 2px;        
-        & > a {
-            height: 56px;
-            position: relative;
-            z-index: 9999;
-            font-weight: 600;
-            &:hover {
-                transition: .2s linear;
-            }
-            &.current::after {
-                bottom:0
-            }
-            
-            &:hover::after {
-                bottom: 0;
-                z-index: -1;
-            }
-            &::after {
-                content: "";
-                width: 100%;
-                height: 100%;
-                display: block;
-                position: absolute;
-                bottom: -92%;
-                transition: .3s all ease;
-                left: 0;
-                z-index: -1;
-            }
-        }    
-        &:last-child {
-            min-width: 150px;
-            & > a {            
-                padding-left: 62px;
-                font-weight: normal;
-                &:hover {
-                    color:#555;
-                    opacity: .5;                
-                }               
-                &:before {
-                    font-family: icomoon!important;    
-                    font-style: normal;
-                    font-weight: 400;
-                    font-variant: normal;
-                    text-transform: none;
-                    line-height: 1;
-                    -webkit-font-smoothing: antialiased;
-                    -moz-osx-font-smoothing: grayscale;
-                    content: "\e901";
-                    width: 34px;
-                    height: 34px;
-                    border-radius: 50%;
-                    background: #fecf00;
-                    left: 15px;
-                    font-size: 23px;
-                    line-height: 33px;
-                    position: absolute;
-                    top: 50%;
-                    transform: translate(0,-50%);
-                    display: block;
-                    position: absolute;
-                    color: #FFF;
-                    text-align: center;
-                }     
-            }
-            &:before,
-            &:after {
-                content: "";
-                width: 1px;
-                height: 26px;
-                background: #d9d9d9;
-                display: block;        
-                position: absolute;
-                top: 50%;
-                transform: translate(0,-50%);
-            } 
-            &:after {
-                right: 0;            
-            }
-        }    
+  }
+  .menu {
+    @apply flex flex-col bg-white;
+    a {
+      @apply font-bold text-sm py-[10px] px-[5px] border-l-[4px] my-[3px] ml-[2px] block;
+
+      &.blue {
+        @apply border-blue-500 text-blue-500;
+      }
+      &.orange {
+        @apply border-orange-500 text-orange-500;
+      }
+      &.green {
+        @apply border-green-500 text-green-500;
+      }
+      &.purple {
+        @apply border-purple-500 text-purple-500;
+      }
+      &.rose {
+        @apply border-rose-500 text-rose-500;
+      }
+      &.yellow {
+        @apply border-yellow-900 text-yellow-900;
+      }
+      &.indigo {
+        @apply border-indigo-500 text-indigo-500;
+      }
+
+      & > span {
+        &:before {
+          font-family: icomoon !important;
+          font-style: normal;
+          font-weight: 400;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          content: "🌭";
+          vertical-align: middle;
+          margin-right: 8px;
+          display: inline-block;
+          margin-top: -2px;
+        }
+      }
     }
+  }
 }

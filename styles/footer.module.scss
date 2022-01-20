@@ -1,23 +1,25 @@
 .footer {
-    .top {
-        background: {
-            color: white;
-        }
-    }    
-    .bottom {
-        padding: {
-            top: 20px;
-            bottom: 20px;
-        }
-        .links {
-            li {
-                margin-right: 10px;
-                padding-right: 10px;
-                border-right: 1px solid #fff;
-                &:last-child {
-                    border-right: 0px;
-                }
-            }
-        }
+  .top {
+    background: {
+      color: white;
     }
+  }
+  .bottom {
+    padding: {
+      top: 30px;
+      bottom: 30px;
+      left: 20px;
+      right: 20px;
+    }
+    .links {
+      li {
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid #fff;
+        &:last-child {
+          border-right: 0px;
+        }
+      }
+    }
+  }
 }

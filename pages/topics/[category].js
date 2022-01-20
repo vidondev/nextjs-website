@@ -12,7 +12,7 @@ export default function Category( { title, categories,category }) {
             <div className={`mt-16`} style={{padding: '0 20px'}}>
                 <h2 className={`text-center`}>最新資訊</h2>
                 <div className={`bg-white rounded flex py-18px px-18px text-base mt-10 items-center justify-start flex-col md:flex-row`}>
-                    <div className={`md:mr-14 mx-auto flex-none`}>類別</div>
+                <div className={`md:mr-14 md:mb-0 mb-5 mr-0 flex-none`}>類別</div>
                     <ul className={`category flex-wrap flex space-x-2`}>
                         <li className={`item all`}>
                             <Link href={`/topics`}><a>全部</a></Link>

@@ -7,30 +7,24 @@ export default function Footer() {
         <div className={`${styles.footer}`}>
             <div className={`${styles.top}`}>
                 <div className={`max-w-8xl mx-auto`}>
-                    <div className='flex py-18px justify-center'>
-                        <div className='flex items-center space-x-3 mx-10'>
-                            <div className='text-lg text-zinc-600 pr-18px'>官方帳號</div>
-                            <div>
-                                <img src={`/assets/images/icon_facebook-thumb-132x132-323-thumb-132x132-3942.png`} width={66}/>
-                            </div>
-                            <div>
-                                <img src={`/assets/images/icon_youtube-thumb-132x132-319-thumb-132x132-3941.png`} width={66}/>
-                            </div>
+                    <div className={`flex md:flex-row flex-col py-18px justify-center`}>
+                        <div className={`flex md:flex-row flex-col items-center md:space-x-3 mx-10`}>
+                            <div className={`text-lg text-zinc-600 md:pr-18px`}>官方帳號</div>
+                            <div className={`flex space-x-3`}>                            
+                                <img src={`/assets/images/icon_facebook-thumb-132x132-323-thumb-132x132-3942.png`} width={66}/>                                                            
+                                <img src={`/assets/images/icon_youtube-thumb-132x132-319-thumb-132x132-3941.png`} width={66}/>                            
+                            </div>                            
                         </div>
-                        <div className='flex space-x-3 mx-10'>
-                            <div>
-                                <img src={`/assets/images/pokemontretta_international_banner_pc.png`} />
-                            </div>
-                            <div>
-                                <img src={`/assets/images/nintendo-banner.png`} />
-                            </div>
+                        <div className={`flex space-x-3 mx-5 my-5 justify-center`}>                            
+                            <img src={`/assets/images/pokemontretta_international_banner_pc.png`} />                            
+                            <img src={`/assets/images/nintendo-banner.png`} />                            
                         </div>
                     </div>
                 </div>            
             </div>
             <div className={`${styles.bottom} bg-black text-white`}>
                 <div className={`max-w-8xl mx-auto`}>
-                    <ul className={`${styles.links} flex text-sm`}>
+                    <ul className={`${styles.links} flex md:text-sm text-xs justify-center md:justify-start`}>
                         <li>
                             <Link href="/">
                                 <a>寶可夢是什麼？</a>
