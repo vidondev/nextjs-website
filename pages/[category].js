@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
 
 const Index = ({ banners = [], topics = [], title }) => {
   return <MainLayout banners={banners} title={title}>        
-    <div className='my-5 grid md:grid-cols-4 gap-3 grid-cols-2 md:mx-0 mx-4'>
+    <div className='my-5 grid md:grid-cols-4 gap-3 grid-cols-2'>
       {topics?.map( (topic) => {
         return <Card topic={topic} showHeader={false} key={topic.id}/>
       })}                  

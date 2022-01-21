@@ -28,10 +28,10 @@ export default function Banner(props) {
     }, [currentIndex, resetIndex]);    
 
     return (  
-        <section>
+        <section >
             <div className={`border-b-4 ${styles.bg}`}>     
                 <div className={`max-w-8xl mx-auto overflow-hidden`}>
-                        <div className={`${styles.container} flex flex-nowrap`} style={{transform: `translate3d(${offset}, 0px, 0px)`}}>
+                        <div className={`${styles.container} flex flex-nowrap md:mx-[15px]`} style={{transform: `translate3d(${offset}, 0px, 0px)`}}>
                             {banners.map( (banner, index) => {
                                 return <div key={index} className={`${styles.item} flex-none w-full ${index==currentIndex%banners.length ? styles.active : ''}`}>
                                     <img  className={`w-full mx-auto`} src={`/assets/images/${banner.image}`} />                    

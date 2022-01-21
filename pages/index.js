@@ -6,21 +6,23 @@ import Link from 'next/link';
 const prisma = new PrismaClient()
 const Index = ({ banners, bannerCards, topics }) => (
   <MainLayout banners={banners}>    
-    <div className='grid md:grid-cols-2 gap-3 grid-cols-1 md:mx-0 mx-4'>
+    <div className='grid md:grid-cols-2 gap-3 grid-cols-1'>
       {bannerCards.map((bannerCard, index) => {
         return <div className='' key={index}>
           <BannerCard image={bannerCard.image}/>
         </div>
       })}      
     </div>
-    <div className='my-5 grid md:grid-cols-4 gap-3 grid-cols-2 md:mx-0 mx-4'>
+    <div className='my-5 grid md:grid-cols-4 gap-3 grid-cols-2'>
       {topics.map( (topic) => {
         return <Card topic={topic} showHeader={true} key={topic.id}/>
       })}                  
     </div>      
-    <div>
+    <div className={`my-[40px]`}>
       <Link href={`/topics`}>
-        <a>See more</a>
+        <a className={`leading-none max-w-[245px] md:max-w-[330px] block rounded-full bg-zinc-700 hover:bg-white border-zinc-700 border font-bold mx-auto text-center text-white hover:text-zinc-700 text-sm md:text-lg transition duration-200 `}>          
+          <span className='w-0 min-h-[45px] md:min-h-[60px] inline-block align-middle'></span>
+          <span>瀏覽更多最新消息</span></a>
       </Link>
     </div>
   </MainLayout>

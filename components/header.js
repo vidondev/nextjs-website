@@ -2,8 +2,7 @@ import { Menu, Transition } from '@headlessui/react'
 import Link from 'next/link'
 import ActiveLink from "./activeLink"
 import styles from '../styles/header.module.scss'
-import { MenuIcon } from "@heroicons/react/outline"
-
+import { MenuIcon, XIcon } from "@heroicons/react/outline"
 
 export default function Header() {
     const nav = [
@@ -19,7 +18,7 @@ export default function Header() {
     return (
         <div className={`${styles.header} relative`}>                
             <div className={`max-w-8xl mx-auto px-5`}>
-                <div className={`flex items-center md:space-x-6 relative`}>                                     
+                <div className={`flex items-center md:space-x-6 relative mx-[15px]`}>                                     
                     <div className={`grow md:flex-none header-logo`}>
                         <Link href="/">
                             <a>
@@ -45,28 +44,40 @@ export default function Header() {
                 </div>
             </div>    
             <div className='md:hidden absolute left-0 top-0 bottom-0'>
-                <Menu as="div" className={`relative md:hidden h-full flex`}>
-                    <Menu.Button className={`ml-4`}>                    
-                        <MenuIcon className={`w-7 h-7`}/>
-                    </Menu.Button>
-                    <Transition                        
-                        className={`top-[100%] absolute z-10  w-screen`}
-                        >
-                        <Menu.Items as="div" className={`${styles.menu}`}>                            
-                            {nav.map((item, index) => (
-                                <div className={`border-t-[1px]`} key={index}>
-                                    <Menu.Item>
-                                        <Link href={item.href}>
-                                            <a className={`${styles[item.color]}`}>
-                                                <span>{item.name}</span>
-                                            </a>        
-                                        </Link>                                    
-                                    </Menu.Item> 
-                                </div>
-                                
-                            ))}                              
-                        </Menu.Items>
-                    </Transition>
+                <Menu as="div" className={`relative md:hidden h-full  flex items-center`}>
+                {({ open }) => {                    
+                    return <>
+                        <Menu.Button className={`ml-4 w-7 h-7 relative`}>                    
+                            <XIcon className={`absolute  left-0 top-0 right-0 bottom-0 transition ease-linear duration-100 ${open ? 'opacity-1' : 'opacity-0' }`}/>
+                            <MenuIcon className={`absolute left-0 top-0 right-0 bottom-0  transition ease-linear duration-100 ${open ? 'opacity-0' : 'opacity-1'}`}/>
+                        </Menu.Button>                        
+                        <Transition                        
+                            className={`top-[100%] absolute z-20  w-screen h-screen`}
+                            enter="transition duration-100 ease-linear"
+                            enterFrom="transform opacity-0"
+                            enterTo="transform opacity-100"
+                            leave="transition duration-100 ease-linear"
+                            leaveFrom="transform opacity-100"
+                            leaveTo="transform opacity-0"
+                            >                            
+                            <Menu.Items as="div" className={`${styles.menu}`}>                                                            
+                                {nav.map((item, index) => (
+                                    <div className={`border-t-[1px]`} key={index}>
+                                        <Menu.Item>
+                                            <Link href={item.href}>
+                                                <a className={`${styles[item.color]}`}>
+                                                    <span>{item.name}</span>
+                                                </a>        
+                                            </Link>                                    
+                                        </Menu.Item> 
+                                    </div>
+                                    
+                                ))}                              
+                            </Menu.Items>
+                        </Transition>
+                    </>
+                }}
+                    
                 </Menu>
             </div>
         </div>                 

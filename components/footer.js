@@ -9,10 +9,10 @@ export default function Footer() {
                 <div className={`max-w-8xl mx-auto`}>
                     <div className={`flex md:flex-row flex-col py-18px justify-center`}>
                         <div className={`flex md:flex-row flex-col items-center md:space-x-3 mx-10`}>
-                            <div className={`text-lg text-zinc-600 md:pr-18px`}>官方帳號</div>
+                            <div className={`text-base md:text-lg text-zinc-600 md:pr-18px mb-[6px] md:mb-0`}>官方帳號</div>
                             <div className={`flex space-x-3`}>                            
-                                <img src={`/assets/images/icon_facebook-thumb-132x132-323-thumb-132x132-3942.png`} width={66}/>                                                            
-                                <img src={`/assets/images/icon_youtube-thumb-132x132-319-thumb-132x132-3941.png`} width={66}/>                            
+                                <img src={`/assets/images/icon_facebook-thumb-132x132-323-thumb-132x132-3942.png`} className={`w-[50px] md:w-[66px]`}/>                                                            
+                                <img src={`/assets/images/icon_youtube-thumb-132x132-319-thumb-132x132-3941.png`} className={`w-[50px] md:w-[66px]`}/>                            
                             </div>                            
                         </div>
                         <div className={`flex space-x-3 mx-5 my-5 justify-center`}>                            
