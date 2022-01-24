@@ -60,8 +60,7 @@ export async function getStaticPaths() {
         include: {
             category: true
         }
-    })    
-    console.log(topics)
+    })        
     const paths = topics.map((topic) => ({
         params: { id: topic.id+"", category: topic.category.type },
       }))
