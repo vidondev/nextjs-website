@@ -1,16 +1,50 @@
-.bg  {
-    background-image: url('/assets/images/bg_hero.png');
-    background-position: left top;
-    background-repeat: repeat;
-    .container {
-        transform: translate3d(0, 0, 0);
-        transition: all 0s ease 0s;    
-        .item {
-            transition: opacity 800ms ease 0s;
-            opacity: 0;
-            &.active {
-                opacity: 1;
-            }
-        }
+.bg {
+  background-image: url("/assets/images/bg_hero.png");
+  background-position: left top;
+  background-repeat: repeat;
+  .container {
+    transform: translate3d(0, 0, 0);
+    transition: all 0s ease 0s;
+    .item {
+      transition: opacity 800ms ease 0s;
+      opacity: 0;
+      &.active {
+        opacity: 1;
+      }
     }
+  }
+}
+
+.slider {
+  .container {
+    transform: translate3d(0, 0, 0);
+    transition: all 0s ease 0s;
+    @apply flex flex-nowrap;
+    .item {
+      transition: opacity 800ms ease 0s;
+      opacity: 0;
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+  .thumbnail {
+    @apply flex justify-center items-center my-3 border-[1px];
+    &.active {
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        @apply bg-gray-300/75;
+      }
+      img {
+        opacity: 0.75;
+      }
+    }
+    width: calc(20% - 8px);
+    position: relative;
+  }
 }

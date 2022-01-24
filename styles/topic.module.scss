@@ -3,3 +3,40 @@
     padding: 3px 24px;
   }
 }
+
+.topic {
+  @apply rounded bg-white text-xs md:text-lg;
+  .header {
+    padding: 5px;
+    @apply text-white  rounded-t;
+    span {
+      &:before {
+        font-family: icomoon !important;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "🌭";
+        vertical-align: middle;
+        margin-top: -2px;
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
+  .content {
+    padding: 18px 10px 30px 10px;
+    @apply md:pt-[35px] md:pl-[140px] md:pb-[50px];
+  }
+  .text {
+    &.anime {
+      @apply text-blue-500;
+    }
+  }
+  .bg-anime {
+    @apply bg-blue-500;
+  }
+}

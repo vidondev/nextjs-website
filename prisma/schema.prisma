@@ -14,6 +14,7 @@ model Topic {
   id          Int       @id @default(autoincrement())
   title       String
   description String
+  content     String?
   image       String?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
@@ -22,6 +23,16 @@ model Topic {
   isFeatured  Boolean   @default(false)
   category    Category? @relation(fields: [categoryId], references: [id])
   categoryId  Int?
+  images      Image[]
+}
+
+model Image {
+  id        Int      @id @default(autoincrement())
+  src       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  topic     Topic?   @relation(fields: [topicId], references: [id])
+  topicId   Int?
 }
 
 model Category {
