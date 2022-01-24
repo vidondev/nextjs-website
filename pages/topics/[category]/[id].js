@@ -28,7 +28,7 @@ export default function Post({topic}) {
                         { topic.content && ReactHtmlParser(topic.content)}                        
                     </div>
                     <div>
-                        <Slider images={topic.images} />
+                        <Slider images={topic?.images} />
                     </div>
                 </div>
             </div>
